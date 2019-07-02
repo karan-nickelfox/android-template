@@ -1,11 +1,11 @@
-package com.android.sampleapp.ui
+package com.android.{{ cookiecutter.app_name.lower() }}.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.android.sampleapp.R
+import com.android.{{ cookiecutter.app_name.lower() }}.R
 
 class FirstFragment : Fragment() {
 

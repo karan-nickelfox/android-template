@@ -1,4 +1,4 @@
-package com.android.sampleapp.utils
+package com.android.{{ cookiecutter.app_name.lower() }}.utils
 
 open class Event<out T>(private val content: T) {
 

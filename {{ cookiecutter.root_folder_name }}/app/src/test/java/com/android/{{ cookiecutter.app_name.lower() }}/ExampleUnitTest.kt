@@ -1,4 +1,4 @@
-package com.android.sampleapp
+package com.android.{{ cookiecutter.app_name.lower() }}
 
 import org.junit.Test
 

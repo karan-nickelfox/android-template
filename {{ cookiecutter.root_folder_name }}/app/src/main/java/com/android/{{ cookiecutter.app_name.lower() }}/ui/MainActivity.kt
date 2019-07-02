@@ -1,8 +1,8 @@
-package com.android.sampleapp.ui
+package com.android.{{ cookiecutter.app_name.lower() }}.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.android.sampleapp.R
+import com.android.{{ cookiecutter.app_name.lower() }}.R
 
 class MainActivity : AppCompatActivity() {
 

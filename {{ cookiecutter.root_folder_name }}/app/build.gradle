@@ -11,11 +11,11 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.android.sampleapp"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [HOCKEYAPP_APP_ID: "\"$HOCKEY_APP_ID\"" ]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -41,15 +41,15 @@ android {
     productFlavors {
         dev {
             dimension "build"
-            applicationId "com.android.sampleapp"
+            applicationId "{{ cookiecutter.dev_app_id }}"
         }
-        staging {
+        stage {
             dimension "build"
-            applicationId "com.android.sampleapp"
+            applicationId "{{ cookiecutter.stage_app_id }}"
         }
-        production {
+        prod {
             dimension "build"
-            applicationId "com.android.sampleapp"
+            applicationId "{{ cookiecutter.prod_app_id }}"
         }
     }
 
@@ -86,6 +86,9 @@ dependencies {
 
     //Material Theme
     implementation 'com.google.android.material:material:1.1.0-alpha07'
+
+    //HockeySDK
+    implementation 'net.hockeyapp.android:HockeySDK:5.2.0'
 
     //Room
     implementation "androidx.room:room-runtime:2.1.0"

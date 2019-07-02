@@ -24,6 +24,10 @@ allprojects {
     }
 }
 
+ext {
+    HOCKEY_APP_ID = {{ cookiecutter.hockey_app_id }}
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
