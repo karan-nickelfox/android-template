@@ -2,7 +2,7 @@
 set -e
 
 APP_NAME='{{ cookiecutter.app_name }}'
-DEVELOP_APP_ID ='{{ cookiecutter.dev_app_id }}'
+DEVELOP_APP_ID='{{ cookiecutter.dev_app_id }}'
 STAGING_APP_ID='{{ cookiecutter.stage_app_id }}'
 PRODUCTION_APP_ID='{{ cookiecutter.prod_app_id }}'
 TARGET_SDK_VERSION='{{ cookiecutter.target_sdk_version }}'
@@ -18,9 +18,9 @@ fi
 
 if [[ $DEVELOP_APP_ID =~ ^[_a-zA-Z]+[\.][_a-zA-Z0-9.]+[\.][_a-zA-Z0-9]+$ ]]
 then
-    echo "Valid STAGING APP ID"
+    echo "Valid DEVELOP APP ID"
 else
-   echo "Invalid STAGING APP ID"
+   echo "Invalid DEVELOP APP ID"
    exit 1
 fi
 
