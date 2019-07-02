@@ -25,7 +25,7 @@ allprojects {
 }
 
 ext {
-    HOCKEY_APP_ID = {{ cookiecutter.hockey_app_id }}
+    HOCKEY_APP_ID = "{{ cookiecutter.hockey_app_id }}"
 }
 
 task clean(type: Delete) {
