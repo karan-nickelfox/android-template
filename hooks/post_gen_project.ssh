@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+pwd
+cd app/
+keytool -genkey -v -keystore {{ cookiecutter.app_name.lower() ~ "_keystore" }} -storepass password -alias {{ cookiecutter.app_name.lower() ~ "_key" }} -keypass password -keyalg RSA -keysize 2048 -validity 10000
+cd ..
+chmod +x gradlew
+ls -la
+git init
+git remote add origin "{{ cookiecutter.github_url }}"
+git add --all
+git commit -am "initial commit"
+git push -f origin master 
+#generating all relevant branches as well
+git checkout -b qa
+git checkout -b staging
+#develop at last so you land on develop branch
+git checkout -b develop
+git push -f origin qa
+git push -f origin staging 
+git push -f origin develop

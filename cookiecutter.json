@@ -1,0 +1,11 @@
+{
+    "app_name": null,
+    "root_folder_name": "{{ cookiecutter.app_name|lower|replace(' ','-') }}-android",
+    "target_sdk_version": 28,
+    "min_sdk_version": 21,
+    "dev_app_id": "{{ 'com.nickelfox.' ~ cookiecutter.app_name.lower() }}",
+    "stage_app_id": "{{ 'com.nickelfox.' ~ cookiecutter.app_name.lower() }}",
+    "prod_app_id": "{{ 'com.clienturl.' ~ cookiecutter.app_name.lower() }}",
+    "hockey_app_id": null,
+    "remote_repo_url": null
+}

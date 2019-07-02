@@ -1,0 +1,49 @@
+#!/bin/sh
+set -e
+
+APP_NAME='{{ cookiecutter.app_name }}'
+DEVELOP_APP_ID ='{{ cookiecutter.dev_app_id }}'
+STAGING_APP_ID='{{ cookiecutter.stage_app_id }}'
+PRODUCTION_APP_ID='{{ cookiecutter.prod_app_id }}'
+TARGET_SDK_VERSION='{{ cookiecutter.target_sdk_version }}'
+MINIMUM_SDK_VERSION='{{ cookiecutter.min_sdk_version }}'
+
+if [[ $APP_NAME =~ ^[_a-zA-Z][_a-zA-Z0-9]+$ ]]
+then
+    echo "Valid Project Name"
+else
+   echo "Invalid Project Name"
+   exit 1
+fi
+
+if [[ $DEVELOP_APP_ID =~ ^[_a-zA-Z]+[\.][_a-zA-Z0-9.]+[\.][_a-zA-Z0-9]+$ ]]
+then
+    echo "Valid STAGING APP ID"
+else
+   echo "Invalid STAGING APP ID"
+   exit 1
+fi
+
+if [[ $STAGING_APP_ID =~ ^[_a-zA-Z]+[\.][_a-zA-Z0-9.]+[\.][_a-zA-Z0-9]+$ ]]
+then
+    echo "Valid STAGING APP ID"
+else
+   echo "Invalid STAGING APP ID"
+   exit 1
+fi
+
+if [[ $TARGET_SDK_VERSION =~ ^[0-9]+$ ]]
+then
+    echo "Valid TARGET SDK VERSION"
+else
+   echo "Invalid TARGET SDK VERSION [target sdk version should be a number only]"
+   exit 1
+fi
+
+if [[ $MINIMUM_SDK_VERSION =~ ^[0-9]+$ ]]
+then
+    echo "Valid MINIMUM SDK VERSION "
+else
+   echo "Invalid MINIMUM SDK VERSION [minimum sdk version should be an number only]"
+   exit 1
+fi
